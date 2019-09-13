@@ -39,8 +39,8 @@ import UserController from './controllers/UserController'
 import UserDetailsController from './controllers/UserDetailsController'
 
 //YOUR ROUTES HERE!!!!!!
-server.use('api/User', new UserController().router)
-server.use('api/UserDetails', new UserDetailsController().router)
+server.use('/api/User', new UserController().router)
+server.use('/api/UserDetails', new UserDetailsController().router)
 
 
 //Default Error Handler
