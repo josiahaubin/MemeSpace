@@ -1,13 +1,13 @@
 <template>
-  <div id="edit-profile-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div id="create-profile-modal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Edit Your Profile!</h5>
+          <h5 class="modal-title">Create Your Profile!</h5>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <form @submit.prevent="editProfile()">
+          <form @submit.prevent="createProfile()">
             <div class="form-group">
               <input type="text" name="username" placeholder="username" v-model="userInfo.username" />
               <label for="profileImage">Profile Image</label>
@@ -36,24 +36,24 @@
 
 <script>
 export default {
-  name: "edit-profile-modal",
+  name: "create-profile-modal",
   data() {
     return {
       userInfo: {}
     };
   },
   computed: {
-    editedUser() {
+    createdUser() {
       return this.$store.state.user;
     }
   },
   methods: {
-    editProfile() {
+    createProfile() {
       let payload = {
         userInfo: this.userInfo,
-        userId: this.editedUser._id
+        userId: this.createdUser._id
       };
-      this.$store.dispatch("editProfile", payload);
+      this.$store.dispatch("createProfile", payload);
       this.userInfo = {};
     }
   },
