@@ -87,7 +87,7 @@ export default new Vuex.Store({
     },
     async editProfile({ commit, dispatch }, payload) {
       try {
-        let res = await _api.put(`/UserDetails/`, payload)
+        let res = await _api.put(`/UserDetails/${payload.userId}`, payload)
         // commit('changeProfile', res.data)
       } catch (error) {
         console.error(error)

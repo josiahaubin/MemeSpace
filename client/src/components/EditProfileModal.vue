@@ -41,10 +41,14 @@ export default {
       userInfo: {}
     };
   },
-  computed: {},
+  computed: {
+    User() {
+      this.$store.state.user._id;
+    }
+  },
   methods: {
     editProfile() {
-      this.$store.dispatch("editProfile", this.userInfo);
+      userInfo.userId += this.$store.dispatch("editProfile", this.userInfo);
       this.userInfo = {};
     }
   },
