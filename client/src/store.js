@@ -69,7 +69,7 @@ export default new Vuex.Store({
     async findUsersByName({ commit, dispatch }, query) {
       try {
         //NOTE the query for this method will be the user name
-        let res = await _api.get('users/find?name=' + query)
+        let res = await _api.get('user/find?name=' + query)
         commit('setUserSearchResults', res.data)
       } catch (error) {
         console.error(error)
@@ -79,7 +79,7 @@ export default new Vuex.Store({
     },
     async currentUser({ commit, dispatch }, payload) {
       try {
-        let res = await _api.get(`/users/${payload.userId}`)
+        let res = await _api.get(`/UserDetails/${payload.userId}`)
         commit('setUser', res.data)
       } catch (error) {
         console.error(error)
@@ -87,7 +87,7 @@ export default new Vuex.Store({
     },
     async editProfile({ commit, dispatch }, payload) {
       try {
-        let res = await _api.put(`/users/${payload.userId}`, payload)
+        let res = await _api.put(`/UserDetails/`, payload)
         // commit('changeProfile', res.data)
       } catch (error) {
         console.error(error)
