@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <!-- NAV BAR HERE -->
+    <!-- SEARCH BAR HERE -->
+    <router-view />
   </div>
 </template>
 
