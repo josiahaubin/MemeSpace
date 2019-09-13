@@ -35,8 +35,12 @@ server.use(new Session().express)
 server.use('/account', new AuthController().router)
 
 
-//YOUR ROUTES HERE!!!!!!
+import UserController from './controllers/UserController'
+import UserDetailsController from './controllers/UserDetailsController'
 
+//YOUR ROUTES HERE!!!!!!
+server.use('api/User', new UserController().router)
+server.use('api/UserDetails', new UserDetailsController().router)
 
 
 //Default Error Handler
