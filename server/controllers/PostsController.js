@@ -11,6 +11,7 @@ export default class UserDetailsController {
       .use(Authorize.authenticated)
       .get('', this.getPosts)
       .get('/:id', this.getPostsById)
+      .get('/:id/comments', this.getComments)
       .post('', this.create)
       .put('/:id', this.edit)
       .delete('/:id', this.delete)
@@ -23,6 +24,15 @@ export default class UserDetailsController {
     } catch (error) { next(error) }
   }
   async getPostsById(req, res, next) {
+    try {
+      let data = await _postsService.findById(req.params.id)
+      if (data) {
+        return res.send(data)
+      }
+      throw new Error("invalid id")
+    } catch (error) { next(error) }
+  }
+  async getComments(req, res, next) {
     try {
       let data = await _postsService.findById(req.params.id)
       if (data) {
