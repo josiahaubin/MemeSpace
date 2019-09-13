@@ -38,7 +38,7 @@ export default new Vuex.Store({
       try {
         let user = await AuthService.Register(creds)
         commit('setUser', user)
-        router.push({ name: "home" })
+        router.push({ name: "Profile" })
       } catch (e) {
         console.warn(e.message)
       }
@@ -47,7 +47,7 @@ export default new Vuex.Store({
       try {
         let user = await AuthService.Login(creds)
         commit('setUser', user)
-        router.push({ name: "home" })
+        router.push({ name: "Profile" })
       } catch (e) {
         console.warn(e.message)
       }
@@ -72,9 +72,18 @@ export default new Vuex.Store({
         let res = await _api.get('users/find?name=' + query)
         commit('setUserSearchResults', res.data)
       } catch (error) {
+        console.error(error)
         //TODO handle this catch
       }
 
+    },
+    async currentUser({ commit, dispatch }, payload) {
+      try {
+        let res = await _api.get(`/users/${payload.userId}`)
+        commit('setUser', res.data)
+      } catch (error) {
+        console.error(error)
+      }
     }
     //#endregion
 
