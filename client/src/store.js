@@ -84,11 +84,18 @@ export default new Vuex.Store({
       } catch (error) {
         console.error(error)
       }
-    }
+    },
     //#endregion
 
     //#region -- POSTS --
-
+    async getPosts({ commit, dispatch }) {
+      try {
+        let res = await _api.get(`/posts`)
+        commit('setPosts', res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
     //#endregion
 
 

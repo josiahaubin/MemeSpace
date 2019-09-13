@@ -3,12 +3,12 @@
   <div class="Profile">
     <h1>MemeSpace</h1>
     <ProfileComp />
-    <Post />
+    <AllPostsComp />
   </div>
 </template>
 
 <script>
-import PostComp from "../components/PostComp";
+import AllPostsComp from "../components/AllPostsComp";
 import ProfileComp from "../components/ProfileComp";
 
 export default {
@@ -19,7 +19,7 @@ export default {
   mounted() {},
   computed: {},
   methods: {},
-  components: { PostComp, /*CreatePost,*/ ProfileComp /*, EditProfile*/ }
+  components: { AllPostsComp, /*CreatePost,*/ ProfileComp /*, EditProfile*/ }
 };
 </script>
 
