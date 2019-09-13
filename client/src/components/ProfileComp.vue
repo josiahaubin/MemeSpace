@@ -1,7 +1,7 @@
 //FIXME 
 <template>
   <div class="Profile-Comp card col-4">
-    <img src alt="BIO IMAGE" />
+    <img alt="BIO IMAGE" />
     <h3>User Name</h3>
     <h3>Name</h3>
     <h5>BIO</h5>
