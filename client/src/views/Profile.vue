@@ -2,7 +2,9 @@
 <template>
   <div class="Profile">
     <h1>MemeSpace</h1>
-    <ProfileComp />
+    <div class="row">
+      <ProfileComp />
+    </div>
     <AllPostsComp />
   </div>
 </template>
