@@ -35,14 +35,23 @@ export default class UserDetailsController {
       res.send(data)
     } catch (error) { next(error) }
   }
-  edit(req, res, next) {
+  async edit(req, res, next) {
     try {
-
+      let data = await _userDetailService.findOneAndUpdate({ _id: req.params.id, user: req.session.uid }, req.body, { new: true })
+        .populate('user', 'name')
+      if (data) {
+        return res.send(data)
+      }
+      throw new Error("invalid id")
     } catch (error) { next(error) }
   }
-  delete(req, res, next) {
+  async delete(req, res, next) {
     try {
-
+      let data = await _userDetailService.findOneAndRemove({ _id: req.params.id, user: req.session.uid })
+      if (!data) {
+        throw new Error("invalid id")
+      }
+      res.send("deleted value")
     } catch (error) { next(error) }
   }
 }
