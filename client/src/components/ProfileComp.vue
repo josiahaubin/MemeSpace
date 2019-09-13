@@ -5,6 +5,10 @@
     <h3>{{profile.username}}</h3>
     <h5>{{profile.bio}}</h5>
     <EditProfileModal />
+    <CreateProfileModal />
+    <button class="btn btn-info" data-toggle="modal" data-target="#create-profile-modal">
+      <i class="fas fa-pencil-alt"></i> Create Profile
+    </button>
     <button class="btn btn-warning" data-toggle="modal" data-target="#edit-profile-modal">
       <i class="fas fa-pencil-alt"></i> Edit Profile
     </button>
@@ -14,6 +18,7 @@
 
 <script>
 import EditProfileModal from "./EditProfileModal";
+import CreateProfileModal from "./CreateProfileModal";
 export default {
   name: "Profile-Comp",
   data() {
@@ -27,7 +32,7 @@ export default {
   methods: {
     // editProfile() {}
   },
-  components: { EditProfileModal }
+  components: { EditProfileModal, CreateProfileModal }
 };
 </script>
 

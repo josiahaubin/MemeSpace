@@ -32,7 +32,10 @@ export default {
       newUser: {
         email: "",
         password: "",
-        name: ""
+        name: "",
+        img: "",
+        bio: "",
+        username: ""
       }
     };
   },
