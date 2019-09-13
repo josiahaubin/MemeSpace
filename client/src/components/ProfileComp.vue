@@ -1,10 +1,9 @@
 //FIXME 
 <template>
   <div class="Profile-Comp card col-4">
-    <img alt="BIO IMAGE" />
-    <h3>User Name</h3>
-    <h3>Name</h3>
-    <h5>BIO</h5>
+    <img :src="profile.img" alt="BIO IMAGE" />
+    <h3>{{profile.username}}</h3>
+    <h5>{{profile.bio}}</h5>
     <EditProfileModal />
     <button class="btn btn-warning" data-toggle="modal" data-target="#edit-profile-modal">
       <i class="fas fa-pencil-alt"></i> Edit Profile
@@ -20,9 +19,13 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    profile() {
+      return this.$store.state.user;
+    }
+  },
   methods: {
-    editProfile() {}
+    // editProfile() {}
   },
   components: { EditProfileModal }
 };
