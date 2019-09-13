@@ -13,8 +13,8 @@
               <input type="file" class="form-control-file" id="profileImage" />
               <label for="profileBio">Bio</label>
               <textarea id="profileBio" class="form-control" rows="3"></textarea>
-              <button class="btn btn-success">Submit</button>
             </div>
+            <button class="btn btn-success">Submit</button>
           </form>
         </div>
         <div class="modal-footer">
