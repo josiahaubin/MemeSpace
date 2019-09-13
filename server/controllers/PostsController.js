@@ -10,25 +10,51 @@ export default class UserDetailsController {
     this.router = express.Router()
       .use(Authorize.authenticated)
       .get('', this.getPosts)
-      .get('/:username', this.getPostsByUsername)
+      .get('/:id', this.getPostsById)
       .post('', this.create)
       .put('/:id', this.edit)
       .delete('/:id', this.delete)
   }
 
-  getPosts() {
-
+  async getPosts(req, res, next) {
+    try {
+      let data = await _postsService.find({})
+      return res.send(data)
+    } catch (error) { next(error) }
   }
-  getPostsByUsername() {
-
+  async getPostsById(req, res, next) {
+    try {
+      let data = await _postsService.findById(req.params.id)
+      if (data) {
+        return res.send(data)
+      }
+      throw new Error("invalid id")
+    } catch (error) { next(error) }
   }
-  create() {
-
+  async create(req, res, next) {
+    try {
+      req.body.user = req.session.uid
+      let data = await _postsService.create(req.body)
+      return res.send(data)
+    } catch (error) { next(error) }
   }
-  edit() {
-
+  async edit(req, res, next) {
+    try {
+      let data = await _postsService.findOneAndUpdate({ _id: req.params.id, user: req.session.uid }, req.body, { new: true })
+        .populate('user', 'name')
+      if (data) {
+        return res.send(data)
+      }
+      throw new Error("invalid id")
+    } catch (error) { next(error) }
   }
-  delete() {
-
+  async  delete(req, res, next) {
+    try {
+      let data = await _postsService.findOneAndRemove({ _id: req.params.id, user: req.session.uid })
+      if (!data) {
+        throw new Error("invalid id")
+      }
+      res.send("deleted value")
+    } catch (error) { next(error) }
   }
 }
