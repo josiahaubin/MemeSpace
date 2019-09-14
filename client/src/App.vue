@@ -1,12 +1,13 @@
 <template>
   <div id="app" class="container-fluid">
     <!-- NAV BAR HERE -->
-    <div id="nav">
-      <router-link to="/">Profile</router-link>|
-      <router-link to="/SearchUsers">Search Users</router-link>
+    <div id="nav" class="bg-primary rounded">
+      <router-link to="/">Profile |</router-link>
+      <router-link to="/SearchUsers">| Search Users |</router-link>
+      <router-link to="/AllPosts">| All Posts</router-link>
       <!-- SEARCH BAR HERE -->
-      <router-view />
     </div>
+    <router-view />
   </div>
 </template>
 
@@ -25,9 +26,9 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
+/* #nav {
   padding: 30px;
-}
+} */
 
 #nav a {
   font-weight: bold;

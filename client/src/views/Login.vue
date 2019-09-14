@@ -1,19 +1,33 @@
 <template>
-  <div class="login">
-    <form v-if="loginForm" @submit.prevent="loginUser">
-      <input type="email" v-model="creds.email" placeholder="email" />
-      <input type="password" v-model="creds.password" placeholder="password" />
-      <button class="btn btn-success" type="submit">Login</button>
-    </form>
-    <form v-else @submit.prevent="register">
-      <input type="text" v-model="newUser.name" placeholder="name" />
-      <input type="email" v-model="newUser.email" placeholder="email" />
-      <input type="password" v-model="newUser.password" placeholder="password" />
-      <button class="btn btn-warning" type="submit">Create Account</button>
-    </form>
-    <div class="action" @click="loginForm = !loginForm">
-      <p v-if="loginForm">No account? Click here to Register</p>
-      <p v-else>Already have an account? Click here to Login</p>
+  <div class="login p-3">
+    <div class="row d-flex justify-content-center">
+      <form v-if="loginForm" @submit.prevent="loginUser">
+        <input type="email" class="form-control m-3" v-model="creds.email" placeholder="email" />
+        <input
+          type="password"
+          class="form-control m-3"
+          v-model="creds.password"
+          placeholder="password"
+        />
+        <button class="btn btn-success mb-3" type="submit">Login</button>
+      </form>
+      <form v-else @submit.prevent="register">
+        <input type="text" class="form-control m-3" v-model="newUser.name" placeholder="name" />
+        <input type="email" class="form-control m-3" v-model="newUser.email" placeholder="email" />
+        <input
+          type="password"
+          class="form-control m-3"
+          v-model="newUser.password"
+          placeholder="password"
+        />
+        <button class="btn btn-warning mb-3" type="submit">Create Account</button>
+      </form>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="action" @click="loginForm = !loginForm">
+        <p v-if="loginForm">No account? Click here to Register</p>
+        <p v-else>Already have an account? Click here to Login</p>
+      </div>
     </div>
   </div>
 </template>

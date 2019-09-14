@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Profile from './views/Profile.vue'
 import Login from './views/Login.vue'
 import SearchUsers from './views/SearchUsers.vue'
+import AllPostsView from './views/AllPostsView.vue'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/searchUsers',
       name: 'searchUsers',
       component: SearchUsers
+    },
+    {
+      path: '/allPosts',
+      name: 'allPosts',
+      component: AllPostsView
     },
     {
       path: "*",

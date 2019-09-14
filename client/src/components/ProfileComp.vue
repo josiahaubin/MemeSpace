@@ -13,7 +13,7 @@
       <EditProfileModal />
       <CreateProfileModal />
       <button
-        class="btn btn-info"
+        class="btn btn-secondary"
         data-toggle="modal"
         data-target="#create-profile-modal"
         v-if="!profile.username"

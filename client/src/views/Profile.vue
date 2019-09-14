@@ -8,7 +8,7 @@
     </div>
     <AllPostsView />
     <div class="row">
-      <button class="btn btn-danger fixed-bottom" @click="logout()">Logout</button>
+      <button class="btn btn-secondary fixed-bottom" @click="logout()">Logout</button>
     </div>
   </div>
 </template>
