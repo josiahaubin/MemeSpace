@@ -1,7 +1,8 @@
 <template>
-  <div class="AllPostView container-fluid text-light">
-    <div class="row">
-      <PostComp v-for="post in posts" :postProp="post" :key="post._id" />
+  <div class="AllPostView container-fluid text-light border rounded">
+    <h4>Posts</h4>
+    <div class="row justify-content-center">
+      <PostComp v-for="post in posts" :postProp="post" :key="post._id" class="col-3 m-2" />
       <div class="col-12 pt-5">
         <CreatePostCompModal />
         <button

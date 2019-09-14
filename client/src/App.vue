@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container-fluid">
     <!-- NAV BAR HERE -->
-    <div id="nav" class="bg-primary rounded">
+    <div id="nav" class="bg-primary rounded row justify-content-center">
       <router-link to="/">Profile |</router-link>
       <router-link to="/SearchUsers">| Search Users |</router-link>
       <router-link to="/AllPosts">| All Posts</router-link>

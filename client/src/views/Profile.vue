@@ -1,12 +1,14 @@
 //FIXME 
 <template>
   <div class="Profile">
-    <h1 class="text-light">MemeSpace</h1>
-    <small class="text-light">Where memes become dreams</small>
+    <div class="bg-primary rounded row justify-content-center">
+      <h1 class="text-light">MemeSpace</h1>
+      <small class="text-light">Where memes become dreams</small>
+    </div>
     <div class="row">
       <ProfileComp />
+      <AllPostsView />
     </div>
-    <AllPostsView />
     <div class="row">
       <button class="btn btn-secondary fixed-bottom" @click="logout()">Logout</button>
     </div>
