@@ -1,5 +1,9 @@
 <template>
   <div class="login p-3">
+    <div class="row d-flex justify-content-center text-light">
+      <h1>Welcome to MemeSpace, where memes become dreams</h1>
+      <h2>Please log in to continue</h2>
+    </div>
     <div class="row d-flex justify-content-center">
       <form v-if="loginForm" @submit.prevent="loginUser">
         <input type="email" class="form-control m-3" v-model="creds.email" placeholder="email" />
@@ -9,7 +13,7 @@
           v-model="creds.password"
           placeholder="password"
         />
-        <button class="btn btn-success mb-3" type="submit">Login</button>
+        <button class="btn btn-primary mb-3" type="submit">Login</button>
       </form>
       <form v-else @submit.prevent="register">
         <input type="text" class="form-control m-3" v-model="newUser.name" placeholder="name" />
@@ -20,7 +24,7 @@
           v-model="newUser.password"
           placeholder="password"
         />
-        <button class="btn btn-warning mb-3" type="submit">Create Account</button>
+        <button class="btn btn-secondary mb-3" type="submit">Create Account</button>
       </form>
     </div>
     <div class="row d-flex justify-content-center">
