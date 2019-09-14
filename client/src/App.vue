@@ -1,6 +1,8 @@
 <template>
   <div id="app container-fluid">
     <!-- NAV BAR HERE -->
+    <router-link to="/">Profile</router-link>
+    <router-link to="/SearchUsers">Search Users</router-link>
     <!-- SEARCH BAR HERE -->
     <router-view />
   </div>
