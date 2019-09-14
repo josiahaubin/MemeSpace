@@ -2,8 +2,10 @@
 <template>
   <div class="Profile">
     <div class="bg-primary rounded row justify-content-center">
-      <h1 class="text-light">MemeSpace</h1>
-      <small class="text-light">Where memes become dreams</small>
+      <div class="col">
+        <h1 class="text-light">MemeSpace</h1>
+        <small class="text-light">Where memes become dreams</small>
+      </div>
     </div>
     <div class="row">
       <ProfileComp />
