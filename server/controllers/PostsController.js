@@ -1,8 +1,10 @@
 import express from 'express'
 import { Authorize } from '../middleware/authorize'
 import PostsService from '../services/PostsService'
+import CommentService from '../services/CommentService'
 
 let _postsService = new PostsService().repository
+let _commentService = new CommentService().repository
 
 export default class UserDetailsController {
 
@@ -34,11 +36,8 @@ export default class UserDetailsController {
   }
   async getComments(req, res, next) {
     try {
-      let data = await _postsService.findById(req.params.id)
-      if (data) {
-        return res.send(data)
-      }
-      throw new Error("invalid id")
+      let data = await _commentService.find({ postId: req.params.id }).populate("user", "name")
+      return res.send(data)
     } catch (error) { next(error) }
   }
   async create(req, res, next) {

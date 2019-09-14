@@ -38,11 +38,13 @@ server.use('/account', new AuthController().router)
 import UserController from './controllers/UserController'
 import UserDetailsController from './controllers/UserDetailsController'
 import PostsController from './controllers/PostsController'
+import CommentController from './controllers/CommentController'
 
 //YOUR ROUTES HERE!!!!!!
 server.use('/api/User', new UserController().router)
 server.use('/api/UserDetails', new UserDetailsController().router)
 server.use('/api/Posts', new PostsController().router)
+server.use('/api/Comments', new CommentController().router)
 
 
 //Default Error Handler
