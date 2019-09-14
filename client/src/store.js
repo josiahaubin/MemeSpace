@@ -85,6 +85,8 @@ export default new Vuex.Store({
         debugger
         let res = await _api.get(`/UserDetails/${payload}`)
         debugger
+        console.log(res.data);
+
         commit('setUser', res.data)
       } catch (error) {
         console.error(error)
