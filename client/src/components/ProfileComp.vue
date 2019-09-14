@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     getProfile() {
-      this.$store.dispatch("getProfile");
+      this.$store.dispatch("getProfile", this.profile);
     }
   },
   components: { EditProfileModal, CreateProfileModal }
