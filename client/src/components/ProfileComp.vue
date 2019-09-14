@@ -31,9 +31,9 @@ export default {
   data() {
     return {};
   },
-  mounted() {
-    this.getProfile();
-  },
+  // mounted() {
+  //   this.getProfile();
+  // },
   computed: {
     profile() {
       return this.$store.state.user;

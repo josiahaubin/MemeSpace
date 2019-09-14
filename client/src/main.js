@@ -8,7 +8,10 @@ import AuthService from "./AuthService"
 
 async function init() {
   let user = await AuthService.Authenticate()
-  if (user) { store.commit("setUser", user) }
+  if (user) {
+    store.commit("setUser", user)
+    store.dispatch("getProfile", user._id)
+  }
   else { router.push({ name: 'login' }) }
   new Vue({
     router,
