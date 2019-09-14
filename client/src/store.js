@@ -83,7 +83,7 @@ export default new Vuex.Store({
     async getProfile({ commit, dispatch }, payload) {
       try {
         debugger
-        let res = await _api.get(`/UserDetails/${payload.userId}`)
+        let res = await _api.get(`/UserDetails/${payload.UserDetails}`)
         commit('setUser', res.data)
       } catch (error) {
         console.error(error)
