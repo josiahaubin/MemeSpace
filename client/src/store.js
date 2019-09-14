@@ -82,7 +82,8 @@ export default new Vuex.Store({
     },
     async getProfile({ commit, dispatch }, payload) {
       try {
-        let res = await _api.get(`/UserDetails/${this.state.user._id}`)
+        debugger
+        let res = await _api.get(`/UserDetails/${payload}`)
         commit('setUser', res.data)
       } catch (error) {
         console.error(error)
@@ -99,7 +100,7 @@ export default new Vuex.Store({
     async editProfile({ commit, dispatch }, payload) {
       try {
         let res = await _api.put(`/UserDetails/${payload.userId}`, payload.userInfo)
-        // commit('changeProfile', res.data)
+        // commit('setUser', res.data)
       } catch (error) {
         console.error(error)
       }
