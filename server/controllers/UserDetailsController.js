@@ -25,7 +25,7 @@ export default class UserDetailsController {
   }
   async getById(req, res, next) {
     try {
-      let data = await _userDetailService.findById(req.params.id).populate('user', 'name')
+      let data = await _userDetailService.findOne({ user: req.params.id }).populate('user', 'name')
       if (data) {
         return res.send(data)
       }
