@@ -2,6 +2,7 @@
 <template>
   <div class="Profile">
     <h1 class="text-light">MemeSpace</h1>
+    <small class="text-light">Where memes become dreams</small>
     <div class="row">
       <ProfileComp />
     </div>
