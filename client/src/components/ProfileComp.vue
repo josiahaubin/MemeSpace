@@ -12,14 +12,14 @@
       <!-- <h5 class="card-text">{{profile.bio}}</h5> -->
       <EditProfileModal />
       <CreateProfileModal />
-      <button
+      <!-- <button
         class="btn btn-secondary"
         data-toggle="modal"
         data-target="#create-profile-modal"
         v-if="!profile.username"
       >
         <i class="fas fa-pencil-alt"></i> Create Profile
-      </button>
+      </button>-->
       <!-- <button class="btn btn-warning" data-toggle="modal" data-target="#edit-profile-modal" v-if="profile.username">
       <i class="fas fa-pencil-alt"></i> Edit Profile
       </button>-->
