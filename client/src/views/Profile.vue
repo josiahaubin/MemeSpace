@@ -1,7 +1,7 @@
 //FIXME 
 <template>
   <div class="Profile">
-    <h1>MemeSpace</h1>
+    <h1 class="text-light">MemeSpace</h1>
     <div class="row">
       <ProfileComp />
     </div>

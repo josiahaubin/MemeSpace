@@ -1,5 +1,5 @@
 <template>
-  <div class="AllPostView container-fluid">
+  <div class="AllPostView container-fluid text-light">
     <div class="row">
       <PostComp v-for="post in posts" :postProp="post" :key="post._id" />
       <div class="col-12 pt-5">
