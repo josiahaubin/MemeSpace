@@ -10,6 +10,7 @@ export default class UserDetailsController {
     this.router = express.Router()
       .use(Authorize.authenticated)
       .get('', this.getUser)
+      .get('/:id', this.getById)
       .get('/:username', this.getProfileByUsername)
       .post('', this.create)
       .put('/:id', this.edit)
@@ -20,6 +21,15 @@ export default class UserDetailsController {
     try {
       let data = await _userDetailService.find({})
       return res.send(data)
+    } catch (error) { next(error) }
+  }
+  async getById(req, res, next) {
+    try {
+      let data = await _userDetailService.findById(req.params.id).populate('user', 'name')
+      if (data) {
+        return res.send(data)
+      }
+      throw new Error("Invalid ID")
     } catch (error) { next(error) }
   }
   async getProfileByUsername(req, res, next) {
