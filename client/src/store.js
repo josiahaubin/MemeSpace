@@ -124,12 +124,25 @@ export default new Vuex.Store({
       } catch (error) {
         console.error(error)
       }
-    }
+    },
     //#endregion
 
 
     //#region -- COMMENTS --
 
+    //#endregion
+
+    //#region -- SEARCH --
+    async searchUsers({ commit, dispatch }, payload) {
+      try {
+        let res = await _api.get(`/UserDetails/${payload}`)
+        console.log(res.data)
+        commit('setUser', res.data)
+        router.push('/')
+      } catch (error) {
+        console.error(error)
+      }
+    }
     //#endregion
   }
 })

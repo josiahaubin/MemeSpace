@@ -1,8 +1,8 @@
 <template>
   <div class="searchUsersComp">
-    <form>
+    <form @submit.prevent="search()">
       <input type="text" class="form-control" v-model="searchFor" />
-      <button class="btn btn-primary">Search</button>
+      <button class="btn btn-primary" type="submit">Search</button>
     </form>
   </div>
 </template>
@@ -17,7 +17,11 @@ export default {
     };
   },
   computed: {},
-  methods: {},
+  methods: {
+    search() {
+      this.$store.dispatch("searchUsers", this.searchFor);
+    }
+  },
   components: {}
 };
 </script>

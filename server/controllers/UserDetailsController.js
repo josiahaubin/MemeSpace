@@ -10,7 +10,7 @@ export default class UserDetailsController {
     this.router = express.Router()
       .use(Authorize.authenticated)
       .get('', this.getUser)
-      .get('/:id', this.getById)
+      // .get('/:id', this.getById)
       .get('/:username', this.getProfileByUsername)
       .post('', this.create)
       .put('/:id', this.edit)
