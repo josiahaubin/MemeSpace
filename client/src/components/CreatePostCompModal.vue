@@ -1,5 +1,5 @@
 <template>
-  <div class="CreatePostCompModal">
+  <div class="CreatePostCompModal text-dark">
     <div id="create-post-comp-modal" class="modal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
