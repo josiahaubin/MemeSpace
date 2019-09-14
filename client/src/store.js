@@ -20,7 +20,7 @@ export default new Vuex.Store({
     user: {},
     posts: [],
     activePost: {},
-    userSearchResults: []
+    userSearchResults: {}
   },
   mutations: {
     setUser(state, user) {
