@@ -80,6 +80,14 @@ export default new Vuex.Store({
       }
 
     },
+    async getProfile({ commit, dispatch }, payload) {
+      try {
+        let res = await _api.get(`/UserDetails/${this.state.user._id}`)
+        commit('setUser', res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
     async currentUser({ commit, dispatch }, payload) {
       try {
         let res = await _api.get(`/UserDetails/${payload.userId}`)
@@ -98,8 +106,8 @@ export default new Vuex.Store({
     },
     async createProfile({ commit, dispatch }, payload) {
       try {
-        debugger
         let res = await _api.post(`/UserDetails/`, payload.userInfo)
+        commit('setUser', res.data)
       } catch (error) {
         console.error(error)
       }
