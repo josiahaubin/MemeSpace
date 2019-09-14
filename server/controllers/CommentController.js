@@ -28,6 +28,7 @@ export default class CommentController {
     try {
       let data = await _CommentService.findById(req.params.id)
         .populate("user", "name")
+      res.send(data)
     } catch (error) {
       next(error)
 
