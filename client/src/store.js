@@ -50,7 +50,9 @@ export default new Vuex.Store({
     async login({ commit, dispatch }, creds) {
       try {
         let user = await AuthService.Login(creds)
+        user.img = `//robohash.org/${user.name}?set=set4`
         commit('setUser', user)
+        debugger
         router.push({ name: "Profile" })
       } catch (e) {
         console.warn(e.message)
@@ -74,7 +76,6 @@ export default new Vuex.Store({
       try {
         //NOTE the query for this method will be the user name
         let res = await _api.get(`/UserDetails/${query}`)
-        console.log(res.data)
         commit('setUserSearchResults', res.data)
       } catch (error) {
         console.error(error)
@@ -85,8 +86,6 @@ export default new Vuex.Store({
     async getProfile({ commit, dispatch }, payload) {
       try {
         let res = await _api.get(`/UserDetails/${payload}`)
-        console.log(res);
-
         commit('setUser', res.data)
       } catch (error) {
         console.error(error)
@@ -95,6 +94,7 @@ export default new Vuex.Store({
     async currentUser({ commit, dispatch }, payload) {
       try {
         let res = await _api.get(`/UserDetails/${payload.userId}`)
+
         commit('setUser', res.data)
       } catch (error) {
         console.error(error)
