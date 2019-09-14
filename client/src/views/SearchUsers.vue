@@ -1,7 +1,11 @@
 <template>
   <div class="searchUsers">
-    <SearchUsersComp />
-    <FoundUserComp />
+    <div class="row">
+      <SearchUsersComp class="col" />
+    </div>
+    <div class="row">
+      <FoundUserComp />
+    </div>
   </div>
 </template>
 
