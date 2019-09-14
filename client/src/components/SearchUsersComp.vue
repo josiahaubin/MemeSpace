@@ -19,7 +19,7 @@ export default {
   computed: {},
   methods: {
     search() {
-      this.$store.dispatch("searchUsers", this.searchFor);
+      this.$store.dispatch("findUsersByName", this.searchFor);
     }
   },
   components: {}

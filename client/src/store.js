@@ -76,7 +76,8 @@ export default new Vuex.Store({
     async findUsersByName({ commit, dispatch }, query) {
       try {
         //NOTE the query for this method will be the user name
-        let res = await _api.get('UserDetails/find?username=' + query)
+        let res = await _api.get(`/UserDetails/${query}`)
+        console.log(res.data)
         commit('setUserSearchResults', res.data)
       } catch (error) {
         console.error(error)
