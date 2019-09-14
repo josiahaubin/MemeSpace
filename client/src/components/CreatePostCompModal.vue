@@ -44,17 +44,6 @@
                   required
                 />
               </div>
-              <!-- likeCount -->
-              <div class="form-group">
-                <label for="likeCount">likeCount</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="likeCount"
-                  v-model="newPost.likeCount"
-                  required
-                />
-              </div>
             </form>
           </div>
           <div class="modal-footer">
@@ -73,7 +62,7 @@ export default {
   name: "create-post-comp-modal",
   data() {
     return {
-      newPost: {} // FIXME
+      newPost: {}
     };
   },
   computed: {},

@@ -16,15 +16,15 @@
 
 
 <script>
-import AllPostsComp from "../components/AllPostsComp";
-import CreatePostCompModal from "../components/CreatePostCompModal"; // FIXME
+import PostComp from "../components/PostComp";
+import CreatePostCompModal from "../components/CreatePostCompModal";
 export default {
   name: "AllPostView",
   data() {
     return {};
   },
   mounted() {
-    this.$store.dispatch("getAllPosts"); // FIXME
+    this.$store.dispatch("getPosts");
   },
   computed: {
     posts() {
@@ -32,7 +32,7 @@ export default {
     }
   },
   methods: {},
-  components: { CreatePostCompModal, AllPostsComp }
+  components: { CreatePostCompModal, PostComp }
 };
 </script>
 

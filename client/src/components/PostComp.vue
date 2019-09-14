@@ -1,29 +1,32 @@
 <template>
-  <div class="PostComp">
-    <img src alt="MEME IMAGE" />
-    <div>CAPTION</div>
-    <div>USER</div>
+  <div class="postComp col-3 border rounded" @click="viewPost()">
+    <img :src="postProp.imgUrl" alt="posted img" />
+    <h5>{{postProp.caption}}</h5>
+    <h5>{{postProp.user}}</h5>
   </div>
 </template>
+
 
 <script>
 export default {
   name: "post",
-  props: ["postProp"], // FIXME WHAT IS A A PROP
+  props: ["postProp"],
   data() {
     return {};
   },
   computed: {},
   methods: {
-    // TODO viewPost(){
-    //   this.$router.push({
-    //     name:"post",
-    //     params: {postId: this.postProp._id}
-    //   });
-    // }
-  }
+    viewPost() {
+      this.$router.push({
+        name: "post",
+        params: { postId: this.postProp._id }
+      }); //FIXME PARAMS POSTID
+    }
+  },
+  components: {}
 };
 </script>
 
-<style>
+
+<style scoped>
 </style>

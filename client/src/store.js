@@ -19,6 +19,7 @@ export default new Vuex.Store({
   state: {
     user: {},
     posts: [],
+    activePost: {},
     userSearchResults: []
   },
   mutations: {
@@ -27,6 +28,9 @@ export default new Vuex.Store({
     },
     setPosts(state, posts) {
       state.posts = posts
+    },
+    setActivePost(state, payload) {
+      state.activePost = payload
     },
     setUserSearchResults(state, users) {
       state.userSearchResults = users
@@ -121,6 +125,36 @@ export default new Vuex.Store({
       try {
         let res = await _api.get(`/posts`)
         commit('setPosts', res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async addPost({ dispatch }, posts) {
+      try {
+        let res = await _api.post('/posts', posts)
+        dispatch('getPosts')
+      } catch (error) {
+        console.error(error)
+
+      }
+    },
+    async getPostById({ commit, dispatch }, posts) {
+      try {
+        let res = await _api.get(`/posts/${posts.postId}`) //FIXME POSTID
+        commit('setActivePost', res.data)
+
+      } catch (error) {
+        console.error(error)
+
+      }
+    },
+
+    async removePost({ dispatch }, posts) {
+      try {
+        let res = await _api.delete('/posts/' + posts)
+        dispatch('getPosts')
+        //NOTE this is coming from the import statement at the top
+        router.push({ name: 'post' })
       } catch (error) {
         console.error(error)
       }
