@@ -1,5 +1,5 @@
 <template>
-  <div class="Post">
+  <div class="PostComp">
     <img src alt="MEME IMAGE" />
     <div>CAPTION</div>
     <div>USER</div>
