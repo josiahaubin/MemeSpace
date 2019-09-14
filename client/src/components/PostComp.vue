@@ -1,6 +1,6 @@
 <template>
   <div class="postComp col-3 border rounded" @click="viewPost()">
-    <img :src="postProp.imgUrl" alt="posted img" />
+    <!-- <img :src="postProp.imgUrl" alt="posted img" /> -->
     <h5>{{postProp.caption}}</h5>
     <h5>{{postProp.user}}</h5>
   </div>

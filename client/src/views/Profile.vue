@@ -5,12 +5,12 @@
     <div class="row">
       <ProfileComp />
     </div>
-    <AllPostsComp />
+    <AllPostsView />
   </div>
 </template>
 
 <script>
-import AllPostsComp from "../components/AllPostsComp";
+import AllPostsView from "../views/AllPostsView";
 import ProfileComp from "../components/ProfileComp";
 
 export default {
@@ -21,7 +21,7 @@ export default {
   mounted() {},
   computed: {},
   methods: {},
-  components: { AllPostsComp, /*CreatePost,*/ ProfileComp /*, EditProfile*/ }
+  components: { AllPostsView, /*CreatePost,*/ ProfileComp /*, EditProfile*/ }
 };
 </script>
 
