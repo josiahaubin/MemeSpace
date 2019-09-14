@@ -41,6 +41,7 @@ export default new Vuex.Store({
     async register({ commit, dispatch }, creds) {
       try {
         let user = await AuthService.Register(creds)
+        user.img = `//robohash.org/${user.name}?set=set4`
         commit('setUser', user)
         router.push({ name: "Profile" })
       } catch (e) {
