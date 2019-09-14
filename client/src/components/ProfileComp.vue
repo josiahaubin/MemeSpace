@@ -6,7 +6,7 @@
       alt="BIO IMAGE"
       class="card-img-top"
     />-->
-    <img src="//robohash.org/d$?set=set4" alt="BIO IMAGE" class="card-img-top" />
+    <img :src="profile.img" alt="BIO IMAGE" class="card-img-top" />
     <div class="card-body">
       <h3 class="card-title">{{profile.name}}</h3>
       <!-- <h5 class="card-text">{{profile.bio}}</h5> -->
