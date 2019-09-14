@@ -1,10 +1,15 @@
 //FIXME 
 <template>
   <div class="Profile-Comp card col-4">
+    <!-- <img
+      src="https://cdn2-www.comingsoon.net/assets/uploads/2018/08/conair-618x360.jpg"
+      alt="BIO IMAGE"
+      class="card-img-top"
+    />-->
     <img :src="profile.img" alt="BIO IMAGE" class="card-img-top" />
     <div class="card-body">
-      <h3 class="card-title">{{profile.username}}</h3>
-      <h5 class="card-text">{{profile.bio}}</h5>
+      <h3 class="card-title">{{profile.name}}</h3>
+      <!-- <h5 class="card-text">{{profile.bio}}</h5> -->
       <EditProfileModal />
       <CreateProfileModal />
       <button
