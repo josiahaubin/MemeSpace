@@ -33,7 +33,7 @@
                 />
               </div>
               <!-- user  -->
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="user">User</label>
                 <input
                   type="text"
@@ -43,7 +43,7 @@
                   v-model="newPost.user"
                   required
                 />
-              </div>
+              </div>-->
               <button type="submit" class="btn btn-primary">Save changes</button>
             </form>
           </div>
@@ -62,12 +62,15 @@ export default {
   name: "create-post-comp-modal",
   data() {
     return {
-      newPost: {}
+      newPost: {
+        user: this.$store.state.user.name
+      }
     };
   },
   computed: {},
   methods: {
     addPost() {
+      debugger;
       this.$store.dispatch("addPost", this.newPost);
       this.newPost = {};
       $(".close").click();

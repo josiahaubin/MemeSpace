@@ -7,6 +7,9 @@
       <ProfileComp />
     </div>
     <AllPostsView />
+    <div class="row">
+      <button class="btn btn-danger fixed-bottom" @click="logout()">Logout</button>
+    </div>
   </div>
 </template>
 
@@ -21,7 +24,11 @@ export default {
   },
   mounted() {},
   computed: {},
-  methods: {},
+  methods: {
+    logout() {
+      this.$store.dispatch("logout");
+    }
+  },
   components: { AllPostsView, /*CreatePost,*/ ProfileComp /*, EditProfile*/ }
 };
 </script>

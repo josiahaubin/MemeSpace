@@ -35,9 +35,6 @@ export default new Vuex.Store({
     setUserSearchResults(state, users) {
       state.userSearchResults = users
     }
-    // setProfile(state, payload) {
-    //   state.
-    // }
   },
   actions: {
     //#region -- AUTH STUFF --
@@ -103,14 +100,15 @@ export default new Vuex.Store({
         console.error(error)
       }
     },
-    async editProfile({ commit, dispatch }, payload) {
-      try {
-        let res = await _api.put(`/UserDetails/${payload.userId}`, payload.userInfo)
-        commit('setUser', res.data)
-      } catch (error) {
-        console.error(error)
-      }
-    },
+    // REVIEW Do we keep this or remove it?
+    // async editProfile({ commit, dispatch }, payload) {
+    //   try {
+    //     let res = await _api.put(`/UserDetails/${payload.userId}`, payload.userInfo)
+    //     commit('setUser', res.data)
+    //   } catch (error) {
+    //     console.error(error)
+    //   }
+    // },
     async createProfile({ commit, dispatch }, payload) {
       try {
         let res = await _api.post(`/UserDetails/`, payload.userInfo)
