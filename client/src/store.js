@@ -52,7 +52,6 @@ export default new Vuex.Store({
         let user = await AuthService.Login(creds)
         user.img = `//robohash.org/${user.name}?set=set4`
         commit('setUser', user)
-        debugger
         router.push({ name: "Profile" })
       } catch (e) {
         console.warn(e.message)
